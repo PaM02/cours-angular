@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AppRoutingModule } from './app-routing.module';
     FaceSnapComponent,
     FaceSnapListComponent,
     HeaderComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    SingleFaceSnapComponent
   ],
   imports: [
     BrowserModule,
