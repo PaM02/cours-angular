@@ -5,3 +5,16 @@ ng new snapface --style=scss --skip-tests=true
 #ng serve; pour lancer le serveur
 #creer un nouveau component
 ng generate component face-snap
+#formatage date en français
+aller vers le fichier app.module
+ajouter : NgModule; dans import { LOCALE_ID, NgModule } from '@angular/core';
+importer les lignes suivantes: 
+import { FaceSnapComponent } from './face-snap/face-snap.component';
+import { registerLocaleData } from '@angular/common';
+import * as fr from '@angular/common/locales/fr';
+mettre : { provide: LOCALE_ID, useValue: 'fr-FR' } dans ;  providers: [{ provide: LOCALE_ID, useValue: 'fr-FR' }],
+et en fin :  ajouter  constructor() {registerLocaleData(fr.default);} 
+dans export class AppModule {constructor() {registerLocaleData(fr.default);}}
+
+
+
