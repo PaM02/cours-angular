@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
+import { interval } from 'rxjs/internal/observable/interval';
 import { FaceSnap } from './models/face-snap.model';
 
 @Component({
@@ -12,7 +14,22 @@ export class AppComponent {
   // myLastSnap!: FaceSnap;
   // faceSnaps!: FaceSnap[];
 
+  interval$!: Observable<number>;
+
+
   ngOnInit() {
+
+    this.interval$ = interval(1000);
+    /* const interval$ = interval(5000);
+
+    interval$.subscribe(value => console.log(value));
+
+    setTimeout(() => {
+      interval$.subscribe(value => console.log(value));
+    }, 3000); */
+
+
+
     // this.faceSnaps = [
     //   {
     //     title: 'Archibald',
