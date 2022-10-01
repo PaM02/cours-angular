@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs/internal/Observable';
-import { interval } from 'rxjs/internal/observable/interval';
-import { FaceSnap } from './models/face-snap.model';
+import { filter, interval, Observable, tap } from 'rxjs';
+import { map } from 'rxjs/internal/operators/map';
+
 
 @Component({
   selector: 'app-root',
@@ -14,12 +14,33 @@ export class AppComponent {
   // myLastSnap!: FaceSnap;
   // faceSnaps!: FaceSnap[];
 
-  interval$!: Observable<number>;
+  interval$!: Observable<String>;
 
 
   ngOnInit() {
 
-    this.interval$ = interval(1000);
+    // this.interval$ = interval(1000).pipe(
+    //   filter(value => value % 3 === 0),
+    //   map(value => value % 2 === 0 ?
+    //     `Je suis ${value} et je suis pair` :
+    //     `Je suis ${value} et je suis impair`
+    //   ),
+    //   tap(text => this.logger(text))
+    // );
+
+
+    // this.interval$ = interval(1000).pipe(
+    //   map(value => value % 2 === 0 ?
+    //     `Je suis ${value} et je suis pair` :
+    //     `Je suis ${value} et je suis impair`
+    //   )
+    // );
+
+    // this.interval$ = interval(1000).pipe(
+    //   map(value => value * 10)
+    // );
+
+    // this.interval$ = interval(1000);
     /* const interval$ = interval(5000);
 
     interval$.subscribe(value => console.log(value));
@@ -55,6 +76,10 @@ export class AppComponent {
     //     snaps: 0
     //   }
     // ];
+  }
+
+  logger(text: string): void {
+    console.log(`Log: ${text}`);
   }
   // this.mySnap = {
   //   title: 'Archibald',
