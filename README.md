@@ -17,4 +17,11 @@ et en fin :  ajouter  constructor() {registerLocaleData(fr.default);}
 dans export class AppModule {constructor() {registerLocaleData(fr.default);}}
 
 
-
+#formulaire
+ajouter FormsModule dans les imports de app.module.ts
+  imports: [
+    .......,
+    FormsModule,
+    ........
+  ],
+  
