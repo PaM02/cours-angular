@@ -25,3 +25,8 @@ ajouter FormsModule dans les imports de app.module.ts
     ........
   ],
   
+#requete http 
+import { HttpClientModule } from '@angular/common/http';
+   imports: [
+    HttpClientModule
+  ],
