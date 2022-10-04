@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { CoreModule } from './core/core.module';
 import { FaceSnapsModule } from './face-snaps/face-snaps.module';
 import { LandingPageModule } from './landing-page/landing-page.module';
+import { AuthModule } from './auth/auth.module';
 
 
 
@@ -21,7 +22,8 @@ import { LandingPageModule } from './landing-page/landing-page.module';
     FormsModule,
     HttpClientModule,
     CoreModule,
-    LandingPageModule
+    LandingPageModule,
+    AuthModule
   ],
 
   bootstrap: [AppComponent]
