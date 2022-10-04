@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewFaceSnapComponent } from './new-face-snap/new-face-snap.component';
+import { httpInterceptorProviders } from './interceptors';
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import { NewFaceSnapComponent } from './new-face-snap/new-face-snap.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'fr-FR' }],
+  providers: [{ provide: LOCALE_ID, useValue: 'fr-FR' }, httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule {
